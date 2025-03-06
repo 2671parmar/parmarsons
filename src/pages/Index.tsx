@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-16"> {/* Added padding-top to account for fixed navbar */}
       <Hero />
       
       {/* Services Section */}
@@ -64,7 +64,7 @@ const Index = () => {
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary to-violet-600 opacity-30 blur-xl rounded-lg"></div>
                 <div className="relative rounded-lg overflow-hidden">
                   <img 
-                    src="public/lovable-uploads/d9c331bd-cfa5-4117-a28c-feba1ab73a92.png" 
+                    src="/lovable-uploads/d9c331bd-cfa5-4117-a28c-feba1ab73a92.png" 
                     alt="Coding workspace" 
                     className="w-full rounded-lg shadow-lg" 
                   />

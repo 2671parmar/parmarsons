@@ -55,7 +55,7 @@
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted-foreground: 215 20.2% 75%; /* Improved contrast for dark mode */
 
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
@@ -97,6 +97,24 @@
   
   .dark .code-text {
     @apply font-mono text-blue-400;
+  }
+
+  /* Improved dark mode heading readability */
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    @apply text-gray-100;
+  }
+
+  /* Improved dark mode text readability */
+  .dark .section-heading {
+    @apply text-gray-100;
+  }
+
+  .dark .text-gray-600 {
+    @apply text-gray-300;
+  }
+
+  .dark .business-hours-text {
+    @apply text-gray-300;
   }
 
   .animate-delay-100 {

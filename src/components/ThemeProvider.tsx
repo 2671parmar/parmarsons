@@ -12,11 +12,16 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>(() => {
-    // Check if theme is stored in localStorage
-    const savedTheme = localStorage.getItem("theme") as Theme;
-    // Check if user has dark mode preference
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    return savedTheme || (prefersDark ? "dark" : "light");
+    // If running in browser
+    if (typeof window !== 'undefined') {
+      // Check if theme is stored in localStorage
+      const savedTheme = localStorage.getItem("theme") as Theme;
+      // Check if user has dark mode preference
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      return savedTheme || (prefersDark ? "dark" : "light");
+    }
+    // Default to light if not in browser
+    return "light";
   });
 
   useEffect(() => {
@@ -29,6 +34,23 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     // Save theme to localStorage
     localStorage.setItem("theme", theme);
   }, [theme]);
+
+  // Listen for system theme changes
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    
+    const handleChange = (e: MediaQueryListEvent) => {
+      if (!localStorage.getItem("theme")) {
+        setTheme(e.matches ? "dark" : "light");
+      }
+    };
+    
+    mediaQuery.addEventListener("change", handleChange);
+    
+    return () => {
+      mediaQuery.removeEventListener("change", handleChange);
+    };
+  }, []);
 
   const toggleTheme = () => {
     setTheme(prevTheme => (prevTheme === "light" ? "dark" : "light"));

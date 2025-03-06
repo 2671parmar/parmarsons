@@ -11,11 +11,11 @@ const Index = () => {
       <Hero />
       
       {/* Services Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Specialized Services</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Delivering customized technical solutions with a focus on performance, scalability, and user experience.
             </p>
           </div>
@@ -64,8 +64,8 @@ const Index = () => {
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary to-violet-600 opacity-30 blur-xl rounded-lg"></div>
                 <div className="relative rounded-lg overflow-hidden">
                   <img 
-                    src="/lovable-uploads/d9c331bd-cfa5-4117-a28c-feba1ab73a92.png" 
-                    alt="Coding workspace" 
+                    src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80" 
+                    alt="Tech workspace" 
                     className="w-full rounded-lg shadow-lg" 
                   />
                 </div>
@@ -76,10 +76,10 @@ const Index = () => {
               <h2 className="text-3xl font-bold mb-6 opacity-0 animate-fade-in">
                 Technical Expertise <br />With a Creative Approach
               </h2>
-              <p className="text-gray-600 mb-4 opacity-0 animate-fade-in animate-delay-100">
+              <p className="text-muted-foreground mb-4 opacity-0 animate-fade-in animate-delay-100">
                 I specialize in creating digital solutions that combine technical excellence with creative problem-solving. My approach focuses on building applications that are not only functionally robust but also intuitive and enjoyable to use.
               </p>
-              <p className="text-gray-600 mb-6 opacity-0 animate-fade-in animate-delay-200">
+              <p className="text-muted-foreground mb-6 opacity-0 animate-fade-in animate-delay-200">
                 With expertise in JavaScript, Python, and emerging technologies like Llama-Index, I deliver custom web and backend solutions that help businesses streamline operations and enhance their digital presence.
               </p>
               <div className="opacity-0 animate-fade-in animate-delay-300">
@@ -96,13 +96,13 @@ const Index = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-16 bg-tech-dark text-white">
+      <section className="py-16 bg-card text-card-foreground">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-6">Ready to bring your ideas to life?</h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Let's collaborate to create a technical solution tailored to your specific needs and goals.
           </p>
-          <Link to="/contact" className="inline-flex items-center justify-center bg-primary text-white px-8 py-3 rounded-md font-medium hover:bg-primary/90 transition-colors">
+          <Link to="/contact" className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-3 rounded-md font-medium hover:bg-primary/90 transition-colors">
             Get in Touch
           </Link>
         </div>

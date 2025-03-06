@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,10 +25,10 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
   
   const isActive = (path: string) => {
-    return location.pathname === path ? 'text-primary border-b-2 border-primary' : 'text-gray-700 hover:text-primary';
+    return location.pathname === path ? 'text-primary border-b-2 border-primary' : 'text-foreground hover:text-primary';
   };
 
-  const navbarClasses = `bg-white/90 backdrop-blur-sm fixed w-full z-50 transition-shadow ${
+  const navbarClasses = `bg-background/90 backdrop-blur-sm fixed w-full z-50 transition-shadow ${
     scrolled ? 'shadow-md' : 'shadow-sm'
   }`;
 
@@ -37,7 +38,7 @@ const Navbar = () => {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
-              <span className="text-xl font-bold text-tech-dark">ParmarSons</span>
+              <span className="text-xl font-bold text-foreground">ParmarSons</span>
             </Link>
           </div>
           
@@ -58,13 +59,15 @@ const Navbar = () => {
             <Link to="/contact" className={`px-3 py-2 text-sm font-medium ${isActive('/contact')}`}>
               Contact
             </Link>
+            <ThemeToggle />
           </div>
           
           {/* Mobile menu button */}
           <div className="flex items-center md:hidden">
+            <ThemeToggle className="mr-2" />
             <button
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:bg-gray-100"
+              className="inline-flex items-center justify-center p-2 rounded-md text-foreground hover:bg-secondary"
               aria-expanded="false"
             >
               <span className="sr-only">Open main menu</span>
@@ -76,31 +79,31 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-white">
+        <div className="md:hidden bg-background">
           <div className="pt-2 pb-3 space-y-1 px-2">
             <Link to="/" 
               onClick={() => setIsOpen(false)}
-              className={`block px-3 py-2 rounded-md text-base font-medium ${location.pathname === '/' ? 'bg-primary/10 text-primary' : 'hover:bg-gray-100'}`}>
+              className={`block px-3 py-2 rounded-md text-base font-medium ${location.pathname === '/' ? 'bg-primary/10 text-primary' : 'hover:bg-secondary'}`}>
               Home
             </Link>
             <Link to="/about" 
               onClick={() => setIsOpen(false)}
-              className={`block px-3 py-2 rounded-md text-base font-medium ${location.pathname === '/about' ? 'bg-primary/10 text-primary' : 'hover:bg-gray-100'}`}>
+              className={`block px-3 py-2 rounded-md text-base font-medium ${location.pathname === '/about' ? 'bg-primary/10 text-primary' : 'hover:bg-secondary'}`}>
               About
             </Link>
             <Link to="/services" 
               onClick={() => setIsOpen(false)}
-              className={`block px-3 py-2 rounded-md text-base font-medium ${location.pathname === '/services' ? 'bg-primary/10 text-primary' : 'hover:bg-gray-100'}`}>
+              className={`block px-3 py-2 rounded-md text-base font-medium ${location.pathname === '/services' ? 'bg-primary/10 text-primary' : 'hover:bg-secondary'}`}>
               Services
             </Link>
             <Link to="/portfolio" 
               onClick={() => setIsOpen(false)}
-              className={`block px-3 py-2 rounded-md text-base font-medium ${location.pathname === '/portfolio' ? 'bg-primary/10 text-primary' : 'hover:bg-gray-100'}`}>
+              className={`block px-3 py-2 rounded-md text-base font-medium ${location.pathname === '/portfolio' ? 'bg-primary/10 text-primary' : 'hover:bg-secondary'}`}>
               Portfolio
             </Link>
             <Link to="/contact" 
               onClick={() => setIsOpen(false)}
-              className={`block px-3 py-2 rounded-md text-base font-medium ${location.pathname === '/contact' ? 'bg-primary/10 text-primary' : 'hover:bg-gray-100'}`}>
+              className={`block px-3 py-2 rounded-md text-base font-medium ${location.pathname === '/contact' ? 'bg-primary/10 text-primary' : 'hover:bg-secondary'}`}>
               Contact
             </Link>
           </div>

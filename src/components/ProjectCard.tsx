@@ -16,13 +16,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
   technologies,
-  imageUrl = "/placeholder.svg",
+  imageUrl = "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80",
   liveUrl,
   githubUrl,
   delay = '',
 }) => {
   return (
-    <div className={`bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 opacity-0 animate-fade-in ${delay}`}>
+    <div className={`bg-card rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 opacity-0 animate-fade-in ${delay}`}>
       <div className="h-48 overflow-hidden">
         <img 
           src={imageUrl} 
@@ -32,13 +32,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </div>
       <div className="p-6">
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
-        <p className="text-gray-600 mb-4">{description}</p>
+        <p className="text-muted-foreground mb-4">{description}</p>
         
         <div className="flex flex-wrap gap-2 mb-4">
           {technologies.map((tech, index) => (
             <span 
               key={index} 
-              className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded font-mono"
+              className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded font-mono"
             >
               {tech}
             </span>
@@ -63,7 +63,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               href={githubUrl} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center text-gray-700 hover:underline transition-colors"
+              className="flex items-center text-foreground hover:underline transition-colors"
             >
               <Github size={16} className="mr-1" />
               Code

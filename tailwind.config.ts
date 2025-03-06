@@ -65,7 +65,7 @@ export default {
 				},
 				tech: {
 					dark: '#1A1F2C',
-					gold: '#D4AF37',
+					gold: '#D3B574',
 					light: '#F6F6F7',
 					gray: '#8A898C',
 					blue: '#33C3F0',

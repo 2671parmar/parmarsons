@@ -18,23 +18,23 @@ const Hero = () => {
             </div>
             
             <div className="opacity-0 animate-fade-in animate-delay-100">
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl text-muted-foreground mb-8">
                 Custom solutions focused on modern web technologies, backend development and AI applications.
               </p>
             </div>
             
             <div className="opacity-0 animate-fade-in animate-delay-200 flex flex-wrap gap-4">
-              <Link to="/contact" className="inline-flex items-center justify-center bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-primary/90 transition-colors">
+              <Link to="/contact" className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 py-3 rounded-md font-medium hover:bg-primary/90 transition-colors">
                 Get Started
                 <ArrowRight size={16} className="ml-2" />
               </Link>
-              <Link to="/portfolio" className="inline-flex items-center justify-center bg-transparent border border-gray-300 text-gray-700 px-6 py-3 rounded-md font-medium hover:bg-gray-50 transition-colors">
+              <Link to="/portfolio" className="inline-flex items-center justify-center bg-transparent border border-border text-foreground px-6 py-3 rounded-md font-medium hover:bg-secondary transition-colors">
                 View Portfolio
               </Link>
             </div>
             
             <div className="mt-12 opacity-0 animate-fade-in animate-delay-300">
-              <p className="text-gray-500 text-sm mb-2">Technologies</p>
+              <p className="text-muted-foreground text-sm mb-2">Technologies</p>
               <div className="flex items-center space-x-6">
                 <span className="code-text font-mono text-sm">JavaScript</span>
                 <span className="code-text font-mono text-sm">Python</span>
@@ -46,8 +46,8 @@ const Hero = () => {
           <div className="md:w-1/2 mt-10 md:mt-0 opacity-0 animate-fade-in animate-delay-200">
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-violet-600 opacity-30 blur-xl rounded-lg"></div>
-              <div className="relative bg-white dark:bg-gray-900 p-5 rounded-lg shadow-xl">
-                <pre className="font-mono text-sm text-gray-800 dark:text-gray-200 overflow-auto">
+              <div className="relative bg-card text-card-foreground p-5 rounded-lg shadow-xl">
+                <pre className="font-mono text-sm overflow-auto">
                   <code>{`// Modern web solutions
 const developer = {
   name: "ParmarSons",

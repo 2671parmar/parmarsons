@@ -1,54 +1,61 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Hero from '@/components/Hero';
 import ServiceCard from '@/components/ServiceCard';
 import { Code, Database, Brain, Server } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Index = () => {
+  const { pathname } = useLocation();
+  
+  // Scroll to top on page navigation
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <div className="min-h-screen pt-16"> {/* Added padding-top to account for fixed navbar */}
       <Hero />
       
       {/* Services Section */}
-      <section className="py-16 bg-secondary">
+      <section className="py-10 sm:py-16 bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-foreground">Specialized Services</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-foreground">Specialized Services</h2>
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
               Delivering customized technical solutions with a focus on performance, scalability, and user experience.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             <ServiceCard 
               title="Web Development"
               description="Creating responsive, modern web applications with React, Vue, and other cutting-edge technologies."
-              icon={<Code className="text-primary" />}
+              icon={<Code className="text-primary h-5 w-5 sm:h-6 sm:w-6" />}
               delay="animate-delay-100"
             />
             <ServiceCard 
               title="Backend Development"
               description="Building robust server-side applications and APIs with Node.js, Express, and Python Flask/Django."
-              icon={<Server className="text-primary" />}
+              icon={<Server className="text-primary h-5 w-5 sm:h-6 sm:w-6" />}
               delay="animate-delay-200"
             />
             <ServiceCard 
               title="Custom Solutions"
               description="Developing tailor-made software solutions to address specific business challenges and requirements."
-              icon={<Database className="text-primary" />}
+              icon={<Database className="text-primary h-5 w-5 sm:h-6 sm:w-6" />}
               delay="animate-delay-300"
             />
             <ServiceCard 
               title="AI Applications"
               description="Implementing intelligent features and capabilities using Llama-Index and other AI frameworks."
-              icon={<Brain className="text-primary" />}
+              icon={<Brain className="text-primary h-5 w-5 sm:h-6 sm:w-6" />}
               delay="animate-delay-400"
             />
           </div>
           
-          <div className="text-center mt-10">
-            <Link to="/services" className="inline-flex items-center justify-center bg-transparent border border-primary text-primary px-6 py-3 rounded-md font-medium hover:bg-primary/5 transition-colors">
+          <div className="text-center mt-8 sm:mt-10">
+            <Link to="/services" className="inline-flex items-center justify-center bg-transparent border border-primary text-primary px-4 py-2 sm:px-6 sm:py-3 rounded-md text-sm sm:text-base font-medium hover:bg-primary/5 transition-colors">
               View All Services
             </Link>
           </div>

@@ -7,8 +7,10 @@ interface ProjectCardProps {
   description: string;
   technologies: string[];
   imageUrl?: string;
-  liveUrl?: string;
+  websiteUrl?: string;
   githubUrl?: string;
+  subtitle?: string;
+  keyFeatures?: string[];
   delay?: string;
 }
 
@@ -17,8 +19,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   technologies,
   imageUrl = "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80",
-  liveUrl,
+  websiteUrl,
   githubUrl,
+  subtitle,
+  keyFeatures,
   delay = '',
 }) => {
   return (
@@ -31,8 +35,21 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         />
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2">{title}</h3>
+        <h3 className="text-xl font-semibold mb-1">{title}</h3>
+        {subtitle && <p className="text-sm text-muted-foreground mb-3 italic">{subtitle}</p>}
+        
         <p className="text-muted-foreground mb-4">{description}</p>
+        
+        {keyFeatures && keyFeatures.length > 0 && (
+          <div className="mb-4">
+            <h4 className="text-sm font-semibold mb-2">Key Features:</h4>
+            <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
+              {keyFeatures.map((feature, index) => (
+                <li key={index}>{feature}</li>
+              ))}
+            </ul>
+          </div>
+        )}
         
         <div className="flex flex-wrap gap-2 mb-4">
           {technologies.map((tech, index) => (
@@ -46,15 +63,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
         
         <div className="flex gap-3">
-          {liveUrl && (
+          {websiteUrl && (
             <a 
-              href={liveUrl} 
+              href={websiteUrl} 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center text-primary hover:underline transition-colors"
             >
               <ExternalLink size={16} className="mr-1" />
-              Live Demo
+              Visit Site
             </a>
           )}
           

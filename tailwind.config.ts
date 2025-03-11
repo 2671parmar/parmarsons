@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -123,8 +122,18 @@ export default {
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
 				mono: ['Fira Code', 'monospace'],
+			},
+			// Add scrollbar customization
+			scrollbar: {
+				thin: '0.25rem',
+				thumb: '0.25rem',
+				track: '0.25rem',
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [
+		require("tailwindcss-animate"),
+		// Add scrollbar plugin
+		require('tailwind-scrollbar')
+	],
 } satisfies Config;

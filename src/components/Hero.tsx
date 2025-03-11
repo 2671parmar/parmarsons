@@ -43,12 +43,12 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="md:w-1/2 mt-10 md:mt-0 opacity-0 animate-fade-in animate-delay-200">
+          <div className="md:w-1/2 mt-10 md:mt-0 opacity-0 animate-fade-in animate-delay-200 w-full">
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-violet-600 opacity-30 blur-xl rounded-lg"></div>
               <div className="relative bg-card text-card-foreground p-5 rounded-lg shadow-xl">
-                <pre className="font-mono text-sm overflow-auto">
-                  <code>{`// Modern web solutions
+                <pre className="font-mono text-xs sm:text-sm overflow-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">
+                  <code className="whitespace-pre-wrap sm:whitespace-pre break-words sm:break-normal">{`// Modern web solutions
 const developer = {
   name: "ParmarSons",
   skills: ["Web Development", 

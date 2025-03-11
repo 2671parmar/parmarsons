@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  base: '/parmarsons/', // Add this line for GitHub Pages deployment
+  base: '/parmarsons/', // GitHub Pages deployment path
   plugins: [
     react(),
     mode === 'development' &&
@@ -20,5 +20,10 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+  },
+  build: {
+    outDir: 'dist', // Make sure the output directory is explicit
+    assetsDir: 'assets', // Directory for assets within the output directory
+    emptyOutDir: true, // Clear the output directory before building
   },
 }));

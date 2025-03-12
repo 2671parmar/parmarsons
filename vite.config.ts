@@ -22,7 +22,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    outDir: '.', // Output directly to the root directory
-    emptyOutDir: false, // Don't empty the root directory as it would delete your source files
+    outDir: 'dist', // Output to dist directory
+    emptyOutDir: true, // Clear the output directory before building
   },
 }));

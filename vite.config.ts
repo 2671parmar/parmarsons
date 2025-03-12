@@ -22,8 +22,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    outDir: 'dist', // Make sure the output directory is explicit
-    assetsDir: 'assets', // Directory for assets within the output directory
-    emptyOutDir: true, // Clear the output directory before building
+    outDir: '.', // Output directly to the root directory
+    emptyOutDir: false, // Don't empty the root directory as it would delete your source files
   },
 }));
